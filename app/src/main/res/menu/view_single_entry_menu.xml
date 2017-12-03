@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_search_1"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Suchen..."
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
+    <item
+        android:id="@+id/action_settings2"
+        android:title="Alle Einträge"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="Neuer Eintrag" />
+
+    <item android:id="@+id/action_settings3"
+        android:title="blablabla"
+        app:showAsAction="never"/>
+    <item android:id="@+id/action_settings4"
+        android:title="Irgendwas zum anklicken."
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_settings5"
+        android:title="Irgendwas zum anklicken." />
+
+</menu>
