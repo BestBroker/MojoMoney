@@ -89,7 +89,7 @@ public class EntryAdapter extends
         datumView.setText(entry.getDatum());
         ImageView imageView = viewHolder.picView;
         if (!entry.getPath().equals(NewEntryActivity.NO_IMAGE_TAKEN)) {
-            Bitmap myMap = EntryHandler.loadImageFromStorage(entry.getPath(), imageView);
+            Bitmap myMap = EntryHandler.loadImageFromStorage(entry.getPath(), mContext);
             imageView.setImageBitmap(myMap);
             imageView.setBackgroundColor(0xFFFFFF);
         } else {

@@ -2,10 +2,12 @@ package com.mojomoney.mojomoney;
 
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.util.Log;
+import android.util.TypedValue;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -142,12 +144,15 @@ public class EntryHandler {
         }*/
     }
 
-    public static Bitmap loadImageFromStorage(String path, ImageView myView) {
+    public static Bitmap loadImageFromStorage(String path, Context context) {
 
         try {
 
-           int targetW = myView.getWidth();
-           int targetH = myView.getHeight();
+            Resources r = context.getResources();
+            float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, r.getDisplayMetrics());
+
+           int targetW = (int) px;
+           int targetH = (int) px;
 
 		/* Get the size of the image */
             BitmapFactory.Options bmOptions = new BitmapFactory.Options();

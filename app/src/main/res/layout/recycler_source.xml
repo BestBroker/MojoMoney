@@ -9,7 +9,9 @@
     <ImageView
         android:id="@+id/ViewImage"
         android:layout_width="40dp"
+        android:minWidth="40dp"
         android:layout_height="40dp"
+        android:minHeight="40dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:src="@drawable/ic_add_a_photo_black_24dp"
