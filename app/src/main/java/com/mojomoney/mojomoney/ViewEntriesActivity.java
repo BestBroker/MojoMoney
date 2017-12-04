@@ -19,7 +19,6 @@ public class ViewEntriesActivity extends AppCompatActivity {
 
     List<Entry> entries;
     EntryAdapter adapter;
-//This ist a test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
