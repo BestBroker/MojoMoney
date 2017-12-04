@@ -144,12 +144,9 @@ public class EntryHandler {
         }*/
     }
 
-    public static Bitmap loadImageFromStorage(String path, Context context) {
+    public static Bitmap loadImageFromStorage(String path, int px) {
 
         try {
-
-            Resources r = context.getResources();
-            float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, r.getDisplayMetrics());
 
            int targetW = (int) px;
            int targetH = (int) px;

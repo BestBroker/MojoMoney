@@ -1,8 +1,10 @@
 package com.mojomoney.mojomoney;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,10 +48,15 @@ public class EntryAdapter extends
     // Store the context for easy access
     private Context mContext;
 
+    private int mPixels;
+
     // Pass in the contact array into the constructor
     public EntryAdapter(Context context, List<Entry> entries) {
         mEntries = entries;
         mContext = context;
+
+        Resources r = context.getResources();
+        mPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, r.getDisplayMetrics());
     }
 
     // Easy access to the context object in the recyclerview
@@ -89,7 +96,7 @@ public class EntryAdapter extends
         datumView.setText(entry.getDatum());
         ImageView imageView = viewHolder.picView;
         if (!entry.getPath().equals(NewEntryActivity.NO_IMAGE_TAKEN)) {
-            Bitmap myMap = EntryHandler.loadImageFromStorage(entry.getPath(), mContext);
+            Bitmap myMap = EntryHandler.loadImageFromStorage(entry.getPath(), mPixels);
             imageView.setImageBitmap(myMap);
             imageView.setBackgroundColor(0xFFFFFF);
         } else {
