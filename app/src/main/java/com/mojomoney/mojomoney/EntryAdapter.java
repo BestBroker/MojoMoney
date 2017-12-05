@@ -1,6 +1,7 @@
 package com.mojomoney.mojomoney;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class EntryAdapter extends
 
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
         public TextView nameTextView;
@@ -37,6 +39,26 @@ public class EntryAdapter extends
             betragTextView = itemView.findViewById(R.id.ViewBetrag);
             datumTextView = itemView.findViewById(R.id.ViewDatum);
             picView = itemView.findViewById(R.id.ViewImage);
+            itemView.setOnClickListener(this);
+        }
+
+        // Handles the row being being clicked
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition(); // gets item position
+            if (position != RecyclerView.NO_POSITION) { // Check if an item was deleted, but the user clicked it before the UI removed it
+
+                Entry tempEntry = mEntries.get(position);
+                Intent intent = new Intent (mContext, ViewSingleEntryActivity.class);
+
+                String id = "id";
+                String message = tempEntry.getName();
+
+                intent.putExtra(id, message);
+                mContext.startActivity(intent);
+
+                Toast.makeText(mContext, "Click...", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
