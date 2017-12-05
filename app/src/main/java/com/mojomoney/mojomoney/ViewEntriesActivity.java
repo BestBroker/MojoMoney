@@ -95,6 +95,10 @@ public class ViewEntriesActivity extends AppCompatActivity {
         List<Entry> entries = db.EntryDao().getAllEntries();
         db.EntryDao().deleteAll(entries);
 
+        for(int i = 0; i < entries.size(); i++) {
+            entries.get(i).deleteImage();
+        }
+
         recreate();
     }
 }

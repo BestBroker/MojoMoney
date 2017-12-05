@@ -4,6 +4,8 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.io.File;
+
 @Entity
 public class Entry {
 
@@ -31,6 +33,17 @@ public class Entry {
         mDatum = datum;
         mTimeStamp = timeStamp;
         mPath = path;
+    }
+
+    void deleteImage() {
+
+        File imgFile = new File(mPath);
+        try {
+            imgFile.delete();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public String getName() {

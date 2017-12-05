@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class EntryHandler {
+public class ImageHandler {
 
     public static File getPicFile (Context context, String timeStamp) {
         File basedir = context.getFilesDir();
@@ -127,21 +127,6 @@ public class EntryHandler {
         String pathString = mypath.getAbsolutePath();
         return pathString;
 
-
-        /*FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(mypath);
-            // Use the compress method on the BitMap object to write image to the OutputStream
-            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }*/
     }
 
     public static Bitmap loadImageFromStorage(String path, int px) {

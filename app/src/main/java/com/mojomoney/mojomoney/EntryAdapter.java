@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EntryAdapter extends
@@ -96,7 +95,7 @@ public class EntryAdapter extends
         datumView.setText(entry.getDatum());
         ImageView imageView = viewHolder.picView;
         if (!entry.getPath().equals(NewEntryActivity.NO_IMAGE_TAKEN)) {
-            Bitmap myMap = EntryHandler.loadImageFromStorage(entry.getPath(), mPixels);
+            Bitmap myMap = ImageHandler.loadImageFromStorage(entry.getPath(), mPixels);
             imageView.setImageBitmap(myMap);
             imageView.setBackgroundColor(0xFFFFFF);
         } else {

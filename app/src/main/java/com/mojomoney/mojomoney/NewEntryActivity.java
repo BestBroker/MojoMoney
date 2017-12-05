@@ -55,7 +55,7 @@ public class NewEntryActivity extends AppCompatActivity {
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             // Create the File where the photo should go
             File photoFile;
-            photoFile = EntryHandler.getPicFile(getApplicationContext(), timeStamp);
+            photoFile = ImageHandler.getPicFile(getApplicationContext(), timeStamp);
             this.photoFile = photoFile;
             // Continue only if the File was successfully created
             if (photoFile != null) {
@@ -70,7 +70,7 @@ public class NewEntryActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
 
-            myMap = EntryHandler.setPic(photoFile);
+            myMap = ImageHandler.setPic(photoFile);
             myButton.setClickable(false);
             myButton.setImageBitmap(myMap);
             slideAnimator();
@@ -89,7 +89,7 @@ public class NewEntryActivity extends AppCompatActivity {
         String path;
 
         if (photoFile != null) {
-            path = EntryHandler.saveToInternalStorage(this, photoFile, mtimeStamp);
+            path = ImageHandler.saveToInternalStorage(this, photoFile, mtimeStamp);
         } else {
             path = NO_IMAGE_TAKEN;
         }
