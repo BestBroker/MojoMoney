@@ -19,4 +19,7 @@ public interface EntryDao {
     @Delete
     void deleteAll (List<Entry> entries);
 
+
+
+    //Felix Änderung
 }
