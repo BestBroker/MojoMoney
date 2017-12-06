@@ -5,8 +5,15 @@ import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import java.util.List;
 
 public class SearchableActivity extends AppCompatActivity {
+
+    List<Entry> entries;
+    SearchAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +29,21 @@ public class SearchableActivity extends AppCompatActivity {
             }
         }
 
-        public Entry doMySearch (String search_request){
+        public List<Entry> doMySearch (String search_request){
             final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "entries")
                     .allowMainThreadQueries()
                     .build();
-        Entry entry = db.SingleEntryDao().getSingleEntrybyName(search_request);
-        return entry;
+
+
+            RecyclerView rvEntries = findViewById(R.id.rvEntries);
+            entries = db.SingleEntryDao().getSingleEntrybyName(search_request);
+
+            adapter = new SearchAdapter(this, entries);
+            rvEntries.setAdapter(adapter);
+            rvEntries.setLayoutManager(new LinearLayoutManager(this));
+
+        return entries;
         }
 
-        //TODO: Method for presenting the results is still missing
 
 }

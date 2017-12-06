@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -29,13 +30,20 @@ public class MainMenuActivity extends AppCompatActivity {
         inflater.inflate(R.menu.main_menu_menu, menu);
 
 
-        // Get the SearchView and set the searchable configuration
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.action_search_2).getActionView();
-        // Assumes current activity is the searchable activity
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 
+            // Get the SearchView and set the searchable configuration
+            SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        try {
+            //TODO:Eine Ursache für Crash liegt in dieser Zeile
+            SearchView searchView = (SearchView) menu.findItem(R.id.action_search_2).getActionView();
+
+
+            // Assumes current activity is the searchable activity
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+            searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+        }catch(Exception e){
+            Toast.makeText(getApplicationContext(), "Suche nicht möglich", Toast.LENGTH_SHORT).show();
+        }
         return true;
     }
     public void reset(View view) {
