@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Single_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:gravity="center"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/Single_datum"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Datum:"/>
+
+        <TextView
+            android:id="@+id/Single_datum_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/Single_datum"
+            android:textAlignment="center"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/Single_betrag"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Single_datum"
+            android:text="Betrag:"/>
+
+        <TextView
+            android:id="@+id/Single_betrag_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Single_datum"
+            android:layout_toEndOf="@+id/Single_betrag"
+            android:textAlignment="center"
+            android:text=""/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/Single_image"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        />
+
+</LinearLayout>

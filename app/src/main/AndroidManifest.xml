@@ -36,7 +36,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".PicTestActivity"></activity>
+        <activity android:name=".ViewSingleEntryActivity"></activity>
     </application>
 
 </manifest>
