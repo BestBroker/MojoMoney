@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -38,6 +39,15 @@ public class ViewEntriesActivity extends AppCompatActivity {
         adapter = new EntryAdapter(this, entries);
         rvEntries.setAdapter(adapter);
         rvEntries.setLayoutManager(new LinearLayoutManager(this));
+
+        List<EntryAmount> amountList = db.SingleEntryDao().loadAmount();
+
+        float sum = addSum(amountList);
+
+        TextView sum_view = findViewById(R.id.gesamt);
+
+        sum_view.setText(Float.toString(sum) + " €");
+
     }
 
     @Override
@@ -100,5 +110,18 @@ public class ViewEntriesActivity extends AppCompatActivity {
         }
 
         recreate();
+    }
+
+    float addSum(List<EntryAmount> amountList) {
+
+        float sum = 0;
+
+        for (int i = 0; i < amountList.size(); i++) {
+
+            sum = sum + amountList.get(i).betrag;
+
+        }
+
+        return sum;
     }
 }
