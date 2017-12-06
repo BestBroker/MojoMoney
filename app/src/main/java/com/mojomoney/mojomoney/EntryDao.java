@@ -20,4 +20,5 @@ public interface EntryDao {
     void deleteAll (List<Entry> entries);
 
 
+    //Test Merging
 }
