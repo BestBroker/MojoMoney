@@ -1,6 +1,7 @@
 package com.mojomoney.mojomoney;
 
 import android.app.SearchManager;
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,9 +17,19 @@ public class SearchableActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            //TODO: Hier muss die Methode zu Room entsprechend angepasst werden
-            //doMySearch(query);
+            doMySearch(query);
 
+            }
         }
+
+        public Entry doMySearch (String search_request){
+            final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "entries")
+                    .allowMainThreadQueries()
+                    .build();
+        Entry entry = db.SingleEntryDao().getSingleEntrybyName(search_request);
+        return entry;
         }
+
+        //TODO: Method for presenting the results is still missing
+
 }

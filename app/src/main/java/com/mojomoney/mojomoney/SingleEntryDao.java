@@ -16,6 +16,9 @@ public interface SingleEntryDao {
     @Query("SELECT betrag FROM entry")
     List<EntryAmount> loadAmount();
 
+    @Query("SELECT * FROM entry WHERE name LIKE :name")
+    Entry getSingleEntrybyName(String name);
+
     @Insert
     void insertSingleEntry(Entry entry);
 
