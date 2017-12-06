@@ -20,6 +20,4 @@ public interface EntryDao {
     void deleteAll (List<Entry> entries);
 
 
-
-    //Felix Änderung 2
 }
