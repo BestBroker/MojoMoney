@@ -133,8 +133,8 @@ public class ImageHandler {
 
         try {
 
-           int targetW = (int) px;
-           int targetH = (int) px;
+           int targetW = px;
+           int targetH = px;
 
 		/* Get the size of the image */
             BitmapFactory.Options bmOptions = new BitmapFactory.Options();
