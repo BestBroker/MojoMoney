@@ -34,7 +34,9 @@ public class ViewSingleEntryActivity extends AppCompatActivity {
             TextView datum = findViewById(R.id.Single_datum_text);
             ImageView image = findViewById(R.id.Single_image);
 
-            String betrag_text = tempEntry.getBetrag();
+            float betrag_float = tempEntry.getBetrag();
+
+            String betrag_text = Float.toString(betrag_float);
             String datum_text = tempEntry.getDatum();
 
             name.setText(tempEntry.getName());

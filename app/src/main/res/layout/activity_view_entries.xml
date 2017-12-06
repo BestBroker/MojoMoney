@@ -26,16 +26,32 @@
         android:onClick="deleteAllFiles"
         android:text="Alle Einträge löschen" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/gesamt_text"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Gesamtausgaben:"/>
+
+        <TextView
+            android:id="@+id/gesamt"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/gesamt_text"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="viewEnd"/>
+
+    </RelativeLayout>
+
     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/rvEntries"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        >
-
-
+        android:layout_marginTop="10dp">
 
     </android.support.v7.widget.RecyclerView>
-
 
 </LinearLayout>

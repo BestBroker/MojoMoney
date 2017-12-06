@@ -112,7 +112,10 @@ public class EntryAdapter extends
         TextView nameView = viewHolder.nameTextView;
         nameView.setText(entry.getName());
         TextView betragView = viewHolder.betragTextView;
-        betragView.setText(entry.getBetrag() + " €");
+
+        String betrag = Float.toString(entry.getBetrag());
+
+        betragView.setText(betrag + " €");
         TextView datumView = viewHolder.datumTextView;
         datumView.setText(entry.getDatum());
         ImageView imageView = viewHolder.picView;

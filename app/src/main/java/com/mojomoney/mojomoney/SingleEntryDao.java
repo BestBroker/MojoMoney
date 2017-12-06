@@ -5,11 +5,16 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
+import java.util.List;
+
 @Dao
 public interface SingleEntryDao {
 
     @Query("SELECT * FROM entry WHERE id LIKE :id")
     Entry getSingleEntry(int id);
+
+    @Query("SELECT betrag FROM entry")
+    List<EntryAmount> loadAmount();
 
     @Insert
     void insertSingleEntry(Entry entry);

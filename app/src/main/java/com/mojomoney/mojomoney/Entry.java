@@ -16,7 +16,7 @@ public class Entry {
     private String mName;
 
     @ColumnInfo(name = "betrag")
-    private String mBetrag;
+    private float mBetrag;
 
     @ColumnInfo(name = "datum")
     private String mDatum;
@@ -27,7 +27,7 @@ public class Entry {
     @ColumnInfo(name = "path")
     private String mPath;
 
-    public Entry(String name, String betrag, String datum, String timeStamp, String path){
+    public Entry(String name, float betrag, String datum, String timeStamp, String path){
         mName = name;
         mBetrag = betrag;
         mDatum = datum;
@@ -50,7 +50,7 @@ public class Entry {
         return mName;
     }
 
-    public String getBetrag() {
+    public float getBetrag() {
         return mBetrag;
     }
 
@@ -76,7 +76,7 @@ public class Entry {
         mName = name;
     }
 
-    public void setmBetrag(String betrag) {
+    public void setmBetrag(float betrag) {
         mBetrag = betrag;
     }
 

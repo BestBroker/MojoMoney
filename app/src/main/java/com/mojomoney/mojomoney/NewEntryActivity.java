@@ -83,7 +83,8 @@ public class NewEntryActivity extends AppCompatActivity {
         EditText eingabe_betrag = findViewById(R.id.eingabe_betrag);
 
         String name =  eingabe_name.getText().toString();
-        String betrag = eingabe_betrag.getText().toString();
+        String betrag_string = eingabe_betrag.getText().toString();
+        float betrag = Float.parseFloat(betrag_string);
         String datum = new SimpleDateFormat("dd.MM.yyyy '('HH:mm 'Uhr)'").format(new Date());
 
         String path;
