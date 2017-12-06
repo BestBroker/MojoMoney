@@ -52,7 +52,7 @@ public class EntryAdapter extends
                 Intent intent = new Intent (mContext, ViewSingleEntryActivity.class);
 
                 String id = "id";
-                String message = tempEntry.getName();
+                int message = tempEntry.getId();
 
                 intent.putExtra(id, message);
                 mContext.startActivity(intent);

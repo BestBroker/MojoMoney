@@ -7,7 +7,10 @@ import android.arch.persistence.room.RoomDatabase;
 public abstract class AppDatabase extends RoomDatabase {
 
     // ...Dao is a class annotated with @Dao.
+
     abstract public EntryDao EntryDao ();
+    abstract  public SingleEntryDao SingleEntryDao ();
+
     //abstract public AlphabeticDao AlphabeticDao ();
     //abstract public DateDao DateDao();
     //abstract public TypeDao TypeDao ();
