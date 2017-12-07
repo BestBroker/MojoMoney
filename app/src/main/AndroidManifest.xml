@@ -11,7 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainMenuActivity" />
+        <activity android:name=".MainMenuActivity">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".SearchableActivity"/>
+
+        </activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,6 +42,7 @@
         </provider>
 
         <activity android:name=".ViewSingleEntryActivity" />
+
         <activity android:name=".SearchableActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -45,6 +51,6 @@
                 android:resource="@xml/searchable"/>
 
         </activity>
-    </application>
 
+    </application>
 </manifest>

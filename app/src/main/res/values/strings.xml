@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MojoMoney</string>
-    <string name="search_hint">Nach Einträgen suchen</string>
+    <string name="search_hint">Suchen...</string>
+    <string name="search_result">Suchergebnisse:</string>
 </resources>

@@ -40,7 +40,7 @@ public class ViewSingleEntryActivity extends AppCompatActivity {
             String datum_text = tempEntry.getDatum();
 
             name.setText(tempEntry.getName());
-            betrag.setText(betrag_text);
+            betrag.setText(betrag_text + " €");
             datum.setText(datum_text);
 
             int px = image.getHeight();
