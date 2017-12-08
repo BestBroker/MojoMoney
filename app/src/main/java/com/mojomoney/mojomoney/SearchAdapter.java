@@ -15,10 +15,6 @@ import android.widget.Toast;
 
 import java.util.List;
 
-/**
- * Created by Felix on 06.12.2017.
- */
-
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

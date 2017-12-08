@@ -10,8 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="TextView"
-        android:textAlignment="center"
-        android:gravity="center"/>
+        android:textSize="20sp"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorText"/>
 
     <Space
         android:layout_width="match_parent"
@@ -19,46 +20,65 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorBeschde_light2"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
 
         <TextView
             android:id="@+id/Single_datum"
-            android:layout_width="60dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:text="Datum:"/>
+            android:text="Datum:"
+            android:textColor="@color/colorText"/>
 
         <TextView
             android:id="@+id/Single_datum_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/Single_datum"
-            android:textAlignment="center"
-            android:text=""/>
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="Hallo"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/colorText"/>
 
         <TextView
             android:id="@+id/Single_betrag"
-            android:layout_width="60dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Single_datum"
-            android:text="Betrag:"/>
+            android:text="Betrag:"
+            android:textColor="@color/colorText"/>
 
         <TextView
             android:id="@+id/Single_betrag_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Single_datum"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/Single_datum_text"
             android:layout_toEndOf="@+id/Single_betrag"
-            android:textAlignment="center"
-            android:text=""/>
+            android:text="Hallo"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/colorText"/>
+
 
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/Single_image"
-        android:layout_width="200dp"
-        android:layout_height="250dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="0dp"
-        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/Single_image"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:layout_below="@+id/Single_betrag_text"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
 
 </LinearLayout>
