@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -37,7 +38,9 @@ public class SearchableActivity extends AppCompatActivity{
 
         RecyclerView rvEntries = findViewById(R.id.search_recycler_view);
         entries = db.SingleEntryDao().getSingleEntrybyName(search_request);
-
+        if(entries.size()==0){
+            Toast.makeText(SearchableActivity.this, "Eintrag nicht gefunden", Toast.LENGTH_SHORT).show();
+        }
         adapter = new SearchAdapter(this, entries);
         rvEntries.setAdapter(adapter);
         rvEntries.setLayoutManager(new LinearLayoutManager(this));
