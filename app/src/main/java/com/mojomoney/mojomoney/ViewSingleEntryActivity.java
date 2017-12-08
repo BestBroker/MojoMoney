@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import java.io.File;
+import java.net.URI;
+import java.net.URL;
+
 public class ViewSingleEntryActivity extends AppCompatActivity {
 
     AppDatabase db;
@@ -45,7 +51,12 @@ public class ViewSingleEntryActivity extends AppCompatActivity {
 
             int px = image.getHeight();
             String path = tempEntry.getPath();
-            image.setImageBitmap(ImageHandler.loadImageFromStorage(path, px));
+
+            File imageFile = new File(path);
+
+            Glide.with(this).load(imageFile).into(image);
+
+            //image.setImageBitmap(ImageHandler.loadImageFromStorage(path, px));
 
         }
     }

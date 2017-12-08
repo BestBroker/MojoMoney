@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class EntryAdapter extends
@@ -119,9 +121,9 @@ public class EntryAdapter extends
         TextView datumView = viewHolder.datumTextView;
         datumView.setText(entry.getDatum());
         ImageView imageView = viewHolder.picView;
+        String path = entry.getPath();
         if (!entry.getPath().equals(NewEntryActivity.NO_IMAGE_TAKEN)) {
-            Bitmap myMap = ImageHandler.loadImageFromStorage(entry.getPath(), mPixels);
-            imageView.setImageBitmap(myMap);
+            Glide.with(mContext).load(path).into(imageView);
             imageView.setBackgroundColor(0xFFFFFF);
         } else {
             imageView.setVisibility(View.INVISIBLE);

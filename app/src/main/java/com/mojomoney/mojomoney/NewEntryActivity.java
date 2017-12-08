@@ -72,8 +72,7 @@ public class NewEntryActivity extends AppCompatActivity {
 
             myMap = ImageHandler.setPic(photoFile);
             myButton.setClickable(false);
-            myButton.setImageBitmap(myMap);
-            slideAnimator();
+            myButton.setImageBitmap(myMap); slideAnimator();
         }
     }
 
