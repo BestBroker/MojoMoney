@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
@@ -121,8 +123,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         datumView.setText(entry.getDatum());
         ImageView imageView = viewHolder.picView;
         if (!entry.getPath().equals(NewEntryActivity.NO_IMAGE_TAKEN)) {
-            Bitmap myMap = ImageHandler.loadImageFromStorage(entry.getPath(), mPixels);
-            imageView.setImageBitmap(myMap);
+            GlideApp
+                    .with(mContext)
+                    .load(entry.getPath())
+                    .centerCrop()
+                    .into(imageView);
+
             imageView.setBackgroundColor(0xFFFFFF);
         } else {
             imageView.setVisibility(View.INVISIBLE);

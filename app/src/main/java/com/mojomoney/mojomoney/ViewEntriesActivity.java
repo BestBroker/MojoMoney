@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class ViewEntriesActivity extends AppCompatActivity {
@@ -42,11 +44,9 @@ public class ViewEntriesActivity extends AppCompatActivity {
 
         List<EntryAmount> amountList = db.SingleEntryDao().loadAmount();
 
-        float sum = addSum(amountList);
-
         TextView sum_view = findViewById(R.id.gesamt);
-
-        sum_view.setText(Float.toString(sum) + " €");
+        String sum = addSum(amountList);
+        sum_view.setText(sum + " €");
 
     }
 
@@ -112,16 +112,16 @@ public class ViewEntriesActivity extends AppCompatActivity {
         recreate();
     }
 
-    float addSum(List<EntryAmount> amountList) {
-
+    String addSum(List<EntryAmount> amountList) {
         float sum = 0;
 
         for (int i = 0; i < amountList.size(); i++) {
-
             sum = sum + amountList.get(i).betrag;
-
         }
 
-        return sum;
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.CEILING);
+
+        return df.format(sum);
     }
 }
