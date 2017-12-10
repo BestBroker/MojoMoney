@@ -6,7 +6,11 @@
     <color name="colorBeschde">#568384</color>
     <color name="colorBeschde_light">#9ed1d2</color>
     <color name="colorBeschde_light2">#aed4d6</color>
-    <color name="colorText">#353535</color>
+    <color name="colorText">#2d2d2d</color>
+
+    <color name="darkColorPrimary">#1c4849</color>
+    <color name="darkColorPrimaryDark">#141831</color>
+    <color name="darkColorAccent">#aed4d6</color>
 
 
 </resources>

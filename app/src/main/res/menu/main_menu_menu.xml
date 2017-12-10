@@ -13,13 +13,7 @@
     android:title="Alle Einträge"
     app:showAsAction="never" />
     <item android:id="@+id/action_settings3"
-        android:title="blablabla"
-        app:showAsAction="never"/>
-    <item android:id="@+id/action_settings4"
-        android:title="Irgendwas zum anklicken."
-        app:showAsAction="never"/>
-    <item android:id="@+id/action_settings5"
-        android:title="Irgendwas zum anklicken."
+        android:title="Thema ändern"
         app:showAsAction="never"/>
 
 </menu>

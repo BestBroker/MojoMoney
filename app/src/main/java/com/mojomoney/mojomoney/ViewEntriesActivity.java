@@ -24,6 +24,11 @@ public class ViewEntriesActivity extends AppCompatActivity {
     EntryAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if(SplashActivity.theme == 1) {
+            setTheme(R.style.AppTheme_Dark_NoActionBar);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_entries);
 
@@ -94,6 +99,12 @@ public class ViewEntriesActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        recreate();
     }
 
     public void deleteAllFiles(View view) {

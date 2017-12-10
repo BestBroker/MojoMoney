@@ -26,8 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/ViewImage"
-        android:textColor="#000000" />
+        android:layout_toEndOf="@+id/ViewImage" />
 
     <TextView
         android:id="@+id/ViewBetrag"
@@ -36,8 +35,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/ViewName"
         android:layout_toEndOf="@+id/ViewDatum"
-        android:textAlignment="viewEnd"
-        android:textColor="#000000"/>
+        android:textAlignment="viewEnd"/>
 
     <TextView
         android:id="@+id/ViewDatum"
@@ -45,8 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/ViewBetrag"
         android:layout_alignBottom="@+id/ViewBetrag"
-        android:layout_toEndOf="@+id/ViewImage"
-        android:textColor="#000000" />
+        android:layout_toEndOf="@+id/ViewImage"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,6 +58,5 @@
             android:background="@color/colorBeschde" />
 
     </LinearLayout>
-
 
 </RelativeLayout>

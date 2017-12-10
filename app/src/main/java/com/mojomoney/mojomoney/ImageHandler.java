@@ -86,7 +86,7 @@ public class ImageHandler {
         }
     }
 
-    public static String saveToInternalStorage(Context context, File source, String timeStamp){
+    public static String copyToInternalStorage(Context context, File source, String timeStamp){
 
         ContextWrapper cw = new ContextWrapper(context);
         // path to /data/data/yourapp/app_data/imageDir
@@ -127,42 +127,6 @@ public class ImageHandler {
         String pathString = mypath.getAbsolutePath();
         return pathString;
 
-    }
-
-    public static Bitmap loadImageFromStorage(String path, int px) {
-
-        try {
-
-           int targetW = px;
-           int targetH = px;
-
-		/* Get the size of the image */
-            BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-            bmOptions.inJustDecodeBounds = true;
-            BitmapFactory.decodeFile(path, bmOptions);
-            int photoW = bmOptions.outWidth;
-            int photoH = bmOptions.outHeight;
-
-		/* Figure out which way needs to be reduced less */
-            int scaleFactor = 1;
-            if ((targetW > 0) || (targetH > 0)) {
-                scaleFactor = Math.min(photoW / targetW, photoH / targetH);
-            }
-
-		/* Set bitmap options to scale the image decode target */
-            bmOptions.inJustDecodeBounds = false;
-            bmOptions.inSampleSize = scaleFactor;
-
-		/* Decode the JPEG file into a Bitmap */
-            Bitmap bitmap = BitmapFactory.decodeFile(path, bmOptions);
-            Bitmap bitmapRotated = rotateImage(bitmap, 90);
-
-            return bitmapRotated;
-        } catch (Exception e) {
-            e.printStackTrace();
-
-            return null;
-        }
     }
 
 }

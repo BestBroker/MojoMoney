@@ -34,6 +34,11 @@ public class NewEntryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if(SplashActivity.theme == 1) {
+            setTheme(R.style.AppTheme_Dark_NoActionBar);
+        }
+
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_new_entry);
@@ -89,7 +94,7 @@ public class NewEntryActivity extends AppCompatActivity {
         String path;
 
         if (photoFile != null) {
-            path = ImageHandler.saveToInternalStorage(this, photoFile, mtimeStamp);
+            path = ImageHandler.copyToInternalStorage(this, photoFile, mtimeStamp);
         } else {
             path = NO_IMAGE_TAKEN;
         }

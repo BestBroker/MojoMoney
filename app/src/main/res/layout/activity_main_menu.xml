@@ -25,7 +25,8 @@
             android:layout_width="match_parent"
             android:onClick="reset"
             android:background="@drawable/button_background"
-            android:text="Zurücksetzen" />
+            android:text="Zurücksetzen"
+            android:textColor="@color/colorText"/>
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -43,18 +44,6 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:srcCompat="@drawable/ic_add_black_24dp" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text=""
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
 

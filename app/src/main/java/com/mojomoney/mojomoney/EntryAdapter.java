@@ -3,7 +3,6 @@ package com.mojomoney.mojomoney;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -11,9 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -51,8 +47,6 @@ public class EntryAdapter extends
 
                 intent.putExtra(id, message);
                 mContext.startActivity(intent);
-
-                Toast.makeText(mContext, "Click...", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -109,9 +103,9 @@ public class EntryAdapter extends
                     .into(imageView);
 
             imageView.setBackgroundColor(0xFFFFFF);
-        }/* else {
+        } else {
             imageView.setVisibility(View.INVISIBLE);
-        }*/
+        }
     }
 
     @Override

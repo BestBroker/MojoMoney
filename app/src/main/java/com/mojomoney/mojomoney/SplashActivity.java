@@ -9,9 +9,12 @@ import android.os.Bundle;
 public class SplashActivity extends AppCompatActivity {
 
     String password;
+    public static int theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences preferences = getSharedPreferences("theme_toggle", MODE_PRIVATE);
+        theme = preferences.getInt("theme_toggle", 0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 

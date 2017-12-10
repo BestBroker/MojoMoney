@@ -27,8 +27,8 @@
         <activity android:name=".SetPasswordActivity" />
         <activity android:name=".EnterPasswordActivity" />
         <activity
-            android:name=".NewEntryActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+            android:name=".NewEntryActivity"/>
+        <!--    android:theme="@style/Theme.AppCompat.Light.Dialog" -->
         <activity android:name=".ViewEntriesActivity" />
 
         <provider
