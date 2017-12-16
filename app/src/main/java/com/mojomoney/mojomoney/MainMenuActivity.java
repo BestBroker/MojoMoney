@@ -20,6 +20,7 @@ public class MainMenuActivity extends AppCompatActivity implements ThemePickerDi
     public void onDialogPositiveClick(DialogFragment dialog) {
         SharedPreferences preferences = getSharedPreferences("theme_toggle", MODE_PRIVATE);
         SplashActivity.theme = preferences.getInt("theme_toggle", 0);
+
     }
 
     @Override
@@ -40,6 +41,7 @@ public class MainMenuActivity extends AppCompatActivity implements ThemePickerDi
         setSupportActionBar(myToolbar);
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -56,6 +58,7 @@ public class MainMenuActivity extends AppCompatActivity implements ThemePickerDi
         return true;
     }
 
+    //TODO: Unnoetig geworden
     public void reset(View view) {
         SharedPreferences settings = getSharedPreferences("PREFS", 0);
         SharedPreferences.Editor editor = settings.edit();
@@ -65,6 +68,11 @@ public class MainMenuActivity extends AppCompatActivity implements ThemePickerDi
         Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    public void showAllEntries (View view){
+        Intent intent = new Intent(getApplicationContext(), ViewEntriesActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -91,6 +99,12 @@ public class MainMenuActivity extends AppCompatActivity implements ThemePickerDi
 
                 DialogFragment newFragment = new ThemePickerDialogFragment();
                 newFragment.show(getSupportFragmentManager(), "theme");
+                return true;
+
+            case R.id.reset_password:
+
+                DialogFragment newnewFragment = new ResetPasswordDialogFragment();
+                newnewFragment.show(getSupportFragmentManager(), "reset_password");
                 return true;
 
             default:

@@ -17,15 +17,15 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <Button
-            android:id="@+id/restart"
+            android:id="@+id/show_all_entries"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:onClick="reset"
+            android:onClick="showAllEntries"
             android:background="@drawable/button_background"
-            android:text="Zurücksetzen"
+            android:text="@string/show_all_entries"
             android:textColor="@color/colorText"/>
 
         <android.support.constraint.ConstraintLayout

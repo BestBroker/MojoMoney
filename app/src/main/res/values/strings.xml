@@ -2,4 +2,8 @@
     <string name="app_name">MojoMoney</string>
     <string name="search_hint">Suchen...</string>
     <string name="search_result">Suchergebnisse:</string>
+    <string name="show_all_entries">Einträge anzeigen</string>
+    <string name="reset_password">Passwort zurücksetzen</string>
+    <string name="dialog_reset_password">Soll das Passwort wirklich zurückgesetzt werden?</string>
+    <string name="cancel">Abbrechen</string>
 </resources>
