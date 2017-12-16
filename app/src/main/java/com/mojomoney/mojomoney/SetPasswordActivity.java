@@ -46,6 +46,7 @@ public class SetPasswordActivity extends AppCompatActivity {
                 editor.putString("password", pw1);
                 editor.apply();
 
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
             } else {
