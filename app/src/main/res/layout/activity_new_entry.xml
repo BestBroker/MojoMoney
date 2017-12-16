@@ -74,14 +74,13 @@
         android:layout_marginEnd="5dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#3ca7a2"/>
+        android:background="@color/colorBeschde_light2"/>
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp" />
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/root_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,7 +106,7 @@
             android:layout_toRightOf="@+id/add_photo_button"
             android:paddingStart="10dp"
             android:text="Foto aufnehmen?"
-            android:textAlignment="textStart"/>
+            android:textAlignment="textStart" />
 
     </RelativeLayout>
 
@@ -120,7 +119,7 @@
         android:layout_marginEnd="5dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#3ca7a2"/>
+        android:background="@color/colorBeschde_light2"/>
 
     <RelativeLayout
         android:layout_width="match_parent"

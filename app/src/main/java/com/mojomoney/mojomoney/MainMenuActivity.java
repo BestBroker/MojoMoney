@@ -49,6 +49,9 @@ public class MainMenuActivity extends AppCompatActivity implements ThemePickerDi
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
 
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setIconifiedByDefault(false);
+        searchView.setQueryRefinementEnabled(true);
+
 
         return true;
     }
