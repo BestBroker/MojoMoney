@@ -4,17 +4,33 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.lang.reflect.Array;
+import java.util.List;
 
 public class MainMenuActivity extends AppCompatActivity implements ThemePickerDialogFragment.NoticeDialogListener {
+
+    private DrawerLayout mDrawerLayout;
+    private ListView mlistView;
+    String [] navigation_drawer_options;
 
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
@@ -31,6 +47,23 @@ public class MainMenuActivity extends AppCompatActivity implements ThemePickerDi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        //Navigation Drawer methods
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        mlistView = (ListView) findViewById(R.id.drawer_menu_listview);
+        Resources res = getResources();
+        navigation_drawer_options = res.getStringArray(R.array.navigation_options);
+
+        //TODO: So richtig?
+        MyArrayAdapter adapter = new MyArrayAdapter(this, navigation_drawer_options);
+        mlistView.setAdapter(adapter);
+        mlistView.setOnItemClickListener(new DrawerItemClickListener());
+
+
+        //TODO: TRY and CATCH
+        try{}catch(Exception e){
+            Toast.makeText(getApplicationContext(), "Fehler",  Toast.LENGTH_LONG);
+        }
+
         if(SplashActivity.theme == 1) {
             setTheme(R.style.AppTheme_Dark_NoActionBar);
         }
@@ -39,6 +72,59 @@ public class MainMenuActivity extends AppCompatActivity implements ThemePickerDi
         setContentView(R.layout.activity_main_menu);
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+    }
+
+    class MyArrayAdapter extends ArrayAdapter<String>{
+        Context context;
+
+        String myNavigationOptions [];
+
+        MyArrayAdapter(Context c, String [] navigation_drawer_options){
+            super(c, R.layout.listview_resource, R.id.drawer_menu_listview_test);
+            this.context = c;
+            this.myNavigationOptions = navigation_drawer_options;
+        }
+
+        @Override
+        public View getView (int position, View convertView, ViewGroup parent){
+            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View listview_resource = layoutInflater.inflate(R.layout.listview_resource, parent, false);
+            TextView myOption = (TextView) findViewById(R.id.MenuOptions);
+            myOption.setText(navigation_drawer_options[position]);
+            return listview_resource;
+        }
+
+
+    }
+
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener{
+
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            ListViewClicked(i);
+        }
+
+
+    }
+
+    //TODO: Nicht benutzt
+    class ArrayAdapterListView implements  AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            ListViewClicked(i);
+        }
+    }
+
+    public void ListViewClicked ( int i){
+        switch(i) {
+            case 0:
+                Toast.makeText(getApplicationContext(), "Test", Toast.LENGTH_LONG);
+                break;
+        }
+        mlistView.setItemChecked(i, true);
+        mDrawerLayout.closeDrawer(mlistView);
+
     }
 
 
@@ -57,6 +143,7 @@ public class MainMenuActivity extends AppCompatActivity implements ThemePickerDi
 
         return true;
     }
+
 
     //TODO: Unnoetig geworden
     public void reset(View view) {

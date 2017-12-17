@@ -6,4 +6,12 @@
     <string name="reset_password">Passwort zurücksetzen</string>
     <string name="dialog_reset_password">Soll das Passwort wirklich zurückgesetzt werden?</string>
     <string name="cancel">Abbrechen</string>
+
+    <string-array name="navigation_options">
+        <item name="test1">Passwort zurücksetzen</item>
+        <item name="test2">Passwort zurücksetzen</item>
+        <item name="test3">Passwort zurücksetzen</item>
+    </string-array>
+
+
 </resources>
